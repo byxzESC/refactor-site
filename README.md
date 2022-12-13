@@ -1,5 +1,6 @@
 # Title: refactor-site
-This project is a refactoring codes and deploy at a live URL excercise. Please refer to the URL below for final result.
+This is a refactoring excercise for html and CSS, additionally deploy the refactored code at github's page.
+Please refer to the URL below for final result.
 
 To access the website: https://byxzesc.github.io/refactor-site/
 
