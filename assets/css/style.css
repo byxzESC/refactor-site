@@ -26,16 +26,19 @@ body {
     color: #d9dcd6;
 }
 
-/* removed div, using ul instead */
-.header ul {
+/* removed div, using nav instead */
+.header nav {
     padding-top: 15px;
     margin-right: 20px;
     float: right;
     /* moved font-family to body*/
     font-size: 20px;
+}
+
+/* changed div to nav */
+.header nav ul {
     list-style-type: none;
 }
-/* moved list style type none to ul */
 
 .header ul li {
     display: inline-block;
