@@ -1,4 +1,4 @@
-# Refactoring-site
+# **Refactoring-site**
 
 ## Technology Used
 
@@ -9,144 +9,114 @@
 
 ## Description
 
-Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
+This is a challenge to html and CSS refactoring for week 1. Students are instructed to refactor codes in html and CSS without any changes to the appearance of the website page.
 
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
+My strategy is to try to use least lines of code for this challenge by using class selectors and ids. Many elements in the challenge are having the same CSS properties and values, thus I could group them into a single class to simplify the code and more clear to the viewer.
 
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
+## Instruction
 
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out?
-
-Lastly, if your project is deployed, include a link to the deployed application here.
-
-If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
-
-
-## Table of Contents (Optional)
-
-If your README is very long, add a table of contents to make it easy for users to find what they need.
-
-* [Code Refactor Example](#code-refactor-example)
-* [Usage](#usage)
-* [Learning Points](#learning-points)
-* [Author Info](#author-info)
-* [Credits](#credits)
-* [License](#license)
-
+The URL below is for accessing the final result for this project.
+> Deployed Link https://byxzesc.github.io/refactor-site/
 
 ## Code Refactor Example
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
-
 ```html
-<div class="header">
-        <h1>Hori<span class="seo">seo</span>n</h1>
-        <div>
-            <ul>
-                <li>
-                    <a href="#search-engine-optimization">Search Engine Optimization</a>
-                </li>
-                <li>
-                    <a href="#online-reputation-management">Online Reputation Management</a>
-                </li>
-                <li>
-                    <a href="#social-media-marketing">Social Media Marketing</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<div id="search-engine-optimization" class="search-engine-optimization">
+    <img src="./assets/images/search-engine-optimization.jpg" class="float-left" />
+    <!-- add content title class to h2 -->
+    <h2 class="content-title">Search Engine Optimization</h2>
+    <p>
+        The dominance of mobile internet use means that users are searching for the right business as they travel, shop, or sit on their couch at home. Search Engine Optimization (SEO) allows you to increase your visibility and find the right customers for your business.
+    </p>
+</div>
+<div id="online-reputation-management" class="online-reputation-management">
+    <img src="./assets/images/online-reputation-management.jpg" class="float-right" />
+    <h2 class="content-title">Online Reputation Management</h2>
+    <p>
+        The web is full of opinions, and some of these can be negative. Social media allows anyone with an internet connection to say whatever they want about your business. Online Reputation Management gives you the control over what potential customers see when they search for your business.
+    </p>
+</div>
+<div id="social-media-marketing" class="social-media-marketing">
+    <img src="./assets/images/social-media-marketing.jpg" class="float-left" />
+    <h2 class="content-title">Social Media Marketing</h2>
+    <p>
+        Social media continues to have a sizable influence on buying habits. Social media marketing helps you determine which platforms are suited to your brand, using analytics to find the right markets and increase your lead generation.
+    </p>
+</div>
 ```
 
-Converting the above non-semantic div with the class of 'header' to an appropriate [<header> semantic element](https://www.w3schools.com/html/html5_semantic_elements.asp).
+Grouping the above non-semantic div elements with the class name of 'content-items' for easier targeting when applying CSS properties to them.
 
 ```html
-<header>
-        <h1>Hori<span class="seo">seo</span>n</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#search-engine-optimization">Search Engine Optimization</a>
-                </li>
-                <li>
-                    <a href="#online-reputation-management">Online Reputation Management</a>
-                </li>
-                <li>
-                    <a href="#social-media-marketing">Social Media Marketing</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<div id="search-engine-optimization" class="content-items">
+    <img src="./assets/images/search-engine-optimization.jpg" class="float-left" />
+    <!-- add content title class to h2 -->
+    <h2 class="content-title">Search Engine Optimization</h2>
+    <p>
+        The dominance of mobile internet use means that users are searching for the right business as they travel, shop, or sit on their couch at home. Search Engine Optimization (SEO) allows you to increase your visibility and find the right customers for your business.
+    </p>
+</div>
+<div id="online-reputation-management" class="content-items">
+    <img src="./assets/images/online-reputation-management.jpg" class="float-right" />
+    <h2 class="content-title">Online Reputation Management</h2>
+    <p>
+        The web is full of opinions, and some of these can be negative. Social media allows anyone with an internet connection to say whatever they want about your business. Online Reputation Management gives you the control over what potential customers see when they search for your business.
+    </p>
+</div>
+<div id="social-media-marketing" class="content-items">
+    <img src="./assets/images/social-media-marketing.jpg" class="float-left" />
+    <h2 class="content-title">Social Media Marketing</h2>
+    <p>
+        Social media continues to have a sizable influence on buying habits. Social media marketing helps you determine which platforms are suited to your brand, using analytics to find the right markets and increase your lead generation.
+    </p>
+</div>
 
 ```
 
-This change require some additional modification to the CSS selector:
+This change factoring out repetitive CSS code to similar contents:
 
 ```css
-.header {
-    padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #2a607c;
+.search-engine-optimization {
+    margin-bottom: 20px;
+    padding: 50px;
+    height: 300px;
+    background-color: #0072bb;
+    color: #ffffff;
+}
+
+.online-reputation-management {
+    margin-bottom: 20px;
+    padding: 50px;
+    height: 300px;
+    background-color: #0072bb;
+    color: #ffffff;
+}
+
+.social-media-marketing {
+    margin-bottom: 20px;
+    padding: 50px;
+    height: 300px;
+    background-color: #0072bb;
     color: #ffffff;
 }
 ```
 
-No longer targeting the element on the page with the class of 'header' but instead the css selector targeting the 'header' element
+No longer targeting each element on the page with their own class but instead the css selector targeting the 'content-items' element that they all share.
 
 ```css
-header {
-    padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #2a607c;
+.content-items {
+    margin-bottom: 20px;
+    padding: 50px;
+    height: 300px;
+    background-color: #0072bb;
     color: #ffffff;
 }
 
 ```
-
-## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-```md
-![alt text](assets/images/screenshot.png)
-```
-
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-
-## License
-
-The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
-
-
----
-
-🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, consider adding a heading called "Features" and listing them there.
-
-## Contributing
-
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
+Brian Zhao [GitHub] https://github.com/byxzESC
 
 
 ---

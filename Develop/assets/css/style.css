@@ -87,19 +87,19 @@ p {
     background-color: #2589bd;
 }
 
-/* group benefits with class benefit-items */
+/* grouping three benefits with class benefit-items */
 .benefit-items {
     margin-bottom: 32px;
     color: #ffffff;
 }
 
-/* using the parent instead of targeting each child h3 */
+/* using the parent element instead of targeting each child h3 */
 .benefits h3 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-/* using the parent instead of targeting each child h3 */
+/* using the parent element instead of targeting each child h3 */
 .benefits img {
     display: block;
     margin: 10px auto;
@@ -116,7 +116,7 @@ p {
     color: #ffffff;
 }
 
-/* using parent to target all the img tags */
+/* using parent element to target all the img tags */
 .content img {
     max-height: 200px;
 }
